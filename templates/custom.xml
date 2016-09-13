@@ -1,0 +1,83 @@
+<templateSet group="custom">
+  <template name="wrap" value="$END$($SELECTION$)" description="wrap to method" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="XML_TEXT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_STATEMENT" value="false" />
+      <option name="JAVA_EXPRESSION" value="false" />
+      <option name="JAVA_DECLARATION" value="false" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="GROOVY_EXPRESSION" value="false" />
+      <option name="GROOVY_STATEMENT" value="false" />
+      <option name="GROOVY_DECLARATION" value="false" />
+      <option name="c" value="false" />
+      <option name="OC_DECLARATION_C" value="false" />
+      <option name="OC_STATEMENT_C" value="false" />
+      <option name="OC_EXPRESSION_C" value="false" />
+      <option name="cpp" value="false" />
+      <option name="OC_DECLARATION_CPP" value="false" />
+      <option name="OC_STATEMENT_CPP" value="false" />
+      <option name="OC_EXPRESSION_CPP" value="false" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="AO" value="new ApiObserver&lt;&gt;(&#10;    new Function1&lt;$TYPE$, Unit&gt;() {&#10;        @Override&#10;        public Unit invoke($TYPE$ response) {&#10;            $ONRESPONSE$&#10;            &#10;            return Unit.INSTANCE;&#10;        }&#10;    },&#10;    new Function1&lt;ApiError, Unit&gt;() {&#10;        @Override&#10;        public Unit invoke(ApiError apiError) {&#10;            $ONERROR$&#10;            &#10;            return Unit.INSTANCE;&#10;        }&#10;    }&#10;)" description="ApiObserver" toReformat="true" toShortenFQNames="true">
+    <variable name="TYPE" expression="expectedType()" defaultValue="BaseResponse" alwaysStopAt="true" />
+    <variable name="ONRESPONSE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ONERROR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="false" />
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_DECLARATION" value="false" />
+    </context>
+  </template>
+  <template name="BIND" value="bind(new OnBuilding&lt;$TYPE$&gt;() {&#10;    @Override&#10;    public void onBuilding(@NotNull FragmentApiUnlinkableBuilder&lt;$TYPE$&gt; builder) {&#10;        builder.onResponseAtUi(new Function1&lt;$TYPE$, Unit&gt;() {&#10;            @Override&#10;            public Unit invoke($TYPE$ response) {&#10;                $SUCESS$&#10;    &#10;                return Unit.INSTANCE;&#10;            }&#10;        });&#10;    &#10;        builder.onErrorAtUi(new Function1&lt;ApiError, Unit&gt;() {&#10;            @Override&#10;            public Unit invoke(ApiError apiError) {&#10;                $ERROR$&#10;                &#10;                return Unit.INSTANCE;&#10;            }&#10;        });&#10;        &#10;        builder.showProgress();$END$&#10;    }&#10;})" description="binder" toReformat="true" toShortenFQNames="true">
+    <variable name="TYPE" expression="expectedType()" defaultValue="BaseResponse" alwaysStopAt="true" />
+    <variable name="SUCESS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ERROR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="subscribe" value=".subscribeOn($IO$)&#10;.observeOn($UI$)&#10;.subscribe($END$)" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="IO" expression="firstWord(&quot;ioScheduler&quot;)" defaultValue="ioScheduler" alwaysStopAt="true" />
+    <variable name="UI" expression="firstWord(&quot;uiScheduler&quot;)" defaultValue="uiScheduler" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_STATEMENT" value="false" />
+      <option name="JAVA_EXPRESSION" value="true" />
+      <option name="JAVA_DECLARATION" value="false" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="COMPLETION" value="false" />
+    </context>
+  </template>
+  <template name="NI" value="throw NotImplementedError(&quot;Not implemented&quot;)" description="Not implemented" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="false" />
+      <option name="KOTLIN_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="Suround brackets" value="$END$($SELECTION$)" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="INJECT" value="@Inject&#10;lateinit var $NAME$: $CLASS$" description="Inject" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="false" />
+      <option name="KOTLIN_STATEMENT" value="false" />
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>

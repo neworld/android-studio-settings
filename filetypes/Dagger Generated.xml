@@ -1,0 +1,16 @@
+<filetype binary="false" description="Dagger Generated" name="Dagger Generated">
+  <highlighting>
+    <options>
+      <option name="LINE_COMMENT" value="" />
+      <option name="COMMENT_START" value="" />
+      <option name="COMMENT_END" value="" />
+      <option name="HEX_PREFIX" value="" />
+      <option name="NUM_POSTFIXES" value="" />
+    </options>
+    <keywords ignore_case="false" />
+  </highlighting>
+  <extensionMap>
+    <mapping pattern="*$$ViewInjector*" />
+    <mapping pattern="*_MembersInjector*" />
+  </extensionMap>
+</filetype>
