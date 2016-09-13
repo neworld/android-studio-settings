@@ -9,8 +9,4 @@
     </options>
     <keywords ignore_case="false" />
   </highlighting>
-  <extensionMap>
-    <mapping pattern="*$$ViewInjector*" />
-    <mapping pattern="*_MembersInjector*" />
-  </extensionMap>
 </filetype>
