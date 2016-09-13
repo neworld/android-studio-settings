@@ -2,9 +2,9 @@
   <component name="FileTypeManager" version="16">
     <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.git;.hg;.svn;CVS;RCS;SCCS;__pycache__;_svn;rcs;" />
     <extensionMap>
-      <mapping pattern=".travis.yml" type="PLAIN_TEXT" />
       <mapping pattern="trash" type="PLAIN_TEXT" />
       <mapping pattern="gradlef" type="PLAIN_TEXT" />
+      <mapping pattern=".travis.yml" type="PLAIN_TEXT" />
       <mapping pattern="LICENSE" type="PLAIN_TEXT" />
       <mapping pattern="LICENCE" type="PLAIN_TEXT" />
       <mapping pattern=".gitattributes" type="PLAIN_TEXT" />
